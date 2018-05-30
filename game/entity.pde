@@ -12,4 +12,11 @@ public abstract class entity{
   public void gainHealth(int amount){
     health += amount; 
   }
+  
+  public void moveDown(int amount){
+    y += amount;
+  }
+  public void moveRight(int amount){
+    x += amount;
+  }
 }
