@@ -2,6 +2,7 @@ public class enemy extends entity{
   public enemy(){
    x = (int)random(600) + 100;
    y = (int)random(400) + 100;
+   health = 50000;
   }
   
   public void update(){

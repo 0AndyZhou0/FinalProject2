@@ -9,7 +9,7 @@ public abstract class entity{
   public int getY(){
     return y; 
   }
-  public void gainHealth(int amount){
+  public void addHealth(int amount){
     health += amount; 
   }
   

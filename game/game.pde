@@ -15,7 +15,11 @@ void draw(){
   background(255);
   pleb.display();
   for(enemy i : enemies){
-    i.display();
+    if(i.getHealth() <= 0){
+      enemies.remove(i);
+    }else{
+      i.display();
+    }
   }
   text(frameRate,10,10);
 }
