@@ -3,6 +3,7 @@ public class player extends entity{
    x = 400;
    y = 300;
    health = 1;
+   bullets = new ArrayList();
   }
   
   public void update(){

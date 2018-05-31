@@ -3,6 +3,7 @@ public class enemy extends entity{
    x = (int)random(600) + 100;
    y = (int)random(400) + 100;
    health = 50000;
+   bullets = new ArrayList();
   }
   
   public void update(){

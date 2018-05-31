@@ -1,5 +1,6 @@
 public abstract class entity{
   int x,y,health;
+  ArrayList<bullet> bullets;
   public int getHealth(){
     return health; 
   }
@@ -18,5 +19,13 @@ public abstract class entity{
   }
   public void moveRight(int amount){
     x += amount;
+  }
+  
+  void shoot(int speed,int damage){
+    bullets.add(new bullet(atan((mouseY-y)/(mouseX-x)),speed,damage));
+  }
+  void hit(bullet b){
+    addHealth(-b.getDamage());
+    bullets.remove(b);
   }
 }

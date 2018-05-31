@@ -14,14 +14,28 @@ void setup(){
 void draw(){
   background(255);
   pleb.display();
-  for(enemy i : enemies){
-    if(i.getHealth() <= 0){
-      enemies.remove(i);
+  for(enemy e : enemies){
+    if(e.getHealth() <= 0){
+      enemies.remove(e);
     }else{
-      i.display();
+      e.display();
     }
   }
+  //if(pleb.bullets.size() > 0){
+    for(bullet b : pleb.bullets){
+      b.update();
+      b.display();
+    }
+  //}
   text(frameRate,10,10);
+}
+
+void crosshair(){
+  ellipse(mouseX,mouseY,10,10);
+}
+
+void mouseClicked(){
+  pleb.shoot(5,5);
 }
 
 void keyPressed(){
