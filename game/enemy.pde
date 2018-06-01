@@ -7,11 +7,18 @@ public class enemy extends entity{
   }
   
   public void update(){
-    print("hi");
+    move();
+    //print("hi");
   }
   
   public void display(){
     fill(255,0,0);
     rect(x,y,20,20);
   }
+  
+  public void move(){
+    x+= random(3) - 2;
+    y+= random(3) - 2;
+  }
+  
 }

@@ -19,6 +19,7 @@ void draw(){
       enemies.remove(e);
     }else{
       e.display();
+      e.update();
     }
   }
   //if(pleb.bullets.size() > 0){
