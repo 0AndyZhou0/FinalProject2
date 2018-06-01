@@ -21,8 +21,9 @@ public class bullet extends entity{
   void update(){
     x += speed * cos(angle);
     y += speed * sin(angle);
+    println(getAngle());
   }
   void display(){
-    ellipse(x,y,5,5);
+    ellipse((int)x,(int)y,5,5);
   }
 }

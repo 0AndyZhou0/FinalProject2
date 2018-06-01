@@ -12,6 +12,6 @@ public class enemy extends entity{
   
   public void display(){
     fill(255,0,0);
-    rect(x,y,20,20);
+    rect((int)x,y,20,20);
   }
 }

@@ -23,15 +23,14 @@ void draw(){
   }
   //if(pleb.bullets.size() > 0){
     for(bullet b : pleb.bullets){
+      //if(b.getX() > width || b.getY() > height){
+      //  pleb.bullets.remove(b);
+      //}
       b.update();
       b.display();
     }
   //}
   text(frameRate,10,10);
-}
-
-void crosshair(){
-  ellipse(mouseX,mouseY,10,10);
 }
 
 void mouseClicked(){
