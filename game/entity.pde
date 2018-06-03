@@ -16,17 +16,21 @@ public abstract class entity{
   }
   
   public void moveDown(double amount){
-    y += amount;
+    if(y > 0 && y + 2*amount < height){
+      y += amount;
+    }
   }
   public void moveRight(double amount){
-    x += amount;
+    if(x > 0 && x + 2*amount < width){
+      x += amount;
+    }
   }
   
   void shoot(int speed,int damage){
-    float angle = atan2((mouseY-y),(mouseX-x));
+    float angle = atan2(mouseY-y,mouseX-x);
     println(angle);
     
-    bullets.add(new bullet(angle,speed,damage));
+    bullets.add(new bullet(angle,speed,damage,x,y));
   }
   void hit(bullet b){
     addHealth(-b.getDamage());

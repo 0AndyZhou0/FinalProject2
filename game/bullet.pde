@@ -1,13 +1,13 @@
 public class bullet extends entity{
   float angle;
   int speed,damage;
-  public bullet(float angle,int speed,int damage){
+  public bullet(float angle,int speed,int damage,float x,float y){
     this.angle = angle;
     this.speed = speed;
     this.damage = damage;
-    x = mouseX;
-    y = mouseY;
-    health = -1;
+    this.x = x;
+    this.y = y;
+    health = 1;
   }
   float getAngle(){
     return angle;
@@ -21,7 +21,6 @@ public class bullet extends entity{
   void update(){
     x += speed * cos(angle);
     y += speed * sin(angle);
-    println(getAngle());
   }
   void display(){
     ellipse((int)x,(int)y,5,5);
