@@ -3,8 +3,8 @@ public class enemy extends entity{
   public enemy(color enemyColor){
    x = (int)random(600) + 100;
    y = (int)random(400) + 100;
-   health = 50000;
-   bullets = new ArrayList();
+   health = 1;
+   bullets = new LinkedList();
    this.Color = enemyColor;
    cooldown = 40;
   }

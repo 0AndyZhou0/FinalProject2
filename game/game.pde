@@ -1,19 +1,19 @@
 player pleb;
-ArrayList<enemy> enemies;
+LinkedList<enemy> enemies;
 
 void setup(){
   size(800,600);
-  enemies = new ArrayList();
+  enemies = new LinkedList();
   pleb = new player();
-  int numEnemies = (int)random(4)+2;
+  int numEnemies = (int)random(3)+1;
   for(int i = 0;i < numEnemies;i++){
-    enemies.add(new enemy(i+240));
+    //enemies.add(new enemy(i+240));
   }
 }
 
 void draw(){
   background(255);
-  pleb.display();
+  
   for(enemy e : enemies){
     if(e.getHealth() <= 0){
       enemies.remove(e);
@@ -21,31 +21,21 @@ void draw(){
       e.update();
       e.display();
     }
-    for(bullet b : e.bullets){
-      if(b.getX() < 0 || b.getX() > width || b.getY() < 0 || b.getY() > height){
-        e.bullets.remove(b);
-      }
-      if(get((int)b.getX(),(int)b.getY()) == 0){
-        pleb.hit(b);
-      }
-      b.update();
-      b.display();
-    }
   }
+  
   if(pleb.getHealth() <= 0){
     println("you lose");
     pleb.health = 100;
-    enemies = new ArrayList();
-  }
-  for(bullet b : pleb.bullets){
-    b.update();
-    b.display();
+    enemies = new LinkedList();
+  }else{
+    pleb.update();
+    pleb.display();
   }
   text(frameRate,10,10);
 }
 
 void mouseClicked(){
-  pleb.mouseShoot(5,5);
+  pleb.mouseShoot(2,2);
 }
 
 void keyPressed(){

@@ -1,8 +1,9 @@
+import java.util.*;
 public abstract class entity{
   float x,y;
   int health;
   color Color;
-  ArrayList<bullet> bullets;
+  LinkedList<bullet> bullets;
   public int getHealth(){
     return health; 
   }
