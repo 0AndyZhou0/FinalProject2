@@ -7,7 +7,7 @@ void setup(){
   pleb = new player();
   int numEnemies = (int)random(4)+2;
   for(int i = 0;i < numEnemies;i++){
-    enemies.add(new enemy());
+    enemies.add(new enemy(i+240));
   }
 }
 

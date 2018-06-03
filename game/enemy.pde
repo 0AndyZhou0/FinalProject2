@@ -1,9 +1,11 @@
 public class enemy extends entity{
-  public enemy(){
+  int enemyColor;
+  public enemy(int enemyColor){
    x = (int)random(600) + 100;
    y = (int)random(400) + 100;
    health = 50000;
    bullets = new ArrayList();
+   this.enemyColor = enemyColor;
   }
   
   public void update(){
@@ -11,7 +13,7 @@ public class enemy extends entity{
   }
   
   public void display(){
-    fill(255,0,0);
+    fill(enemyColor,0,0);
     rect((int)x,y,20,20);
   }
 }
