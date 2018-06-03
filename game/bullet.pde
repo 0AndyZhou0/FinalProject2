@@ -25,4 +25,8 @@ public class bullet extends entity{
   void display(){
     ellipse((int)x,(int)y,5,5);
   }
+  
+  bullet copy(){
+    return new bullet(angle,speed,damage,x,y);
+  }
 }

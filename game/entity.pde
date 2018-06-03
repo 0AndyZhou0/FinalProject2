@@ -42,4 +42,6 @@ public abstract class entity{
     addHealth(-b.getDamage());
     bullets.remove(b);
   }
+  
+  
 }
