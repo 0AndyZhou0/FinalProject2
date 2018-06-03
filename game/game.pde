@@ -1,9 +1,9 @@
 player pleb;
-LinkedList<enemy> enemies;
+ArrayList<enemy> enemies;
 
 void setup(){
   size(800,600);
-  enemies = new LinkedList();
+  enemies = new ArrayList();
   pleb = new player();
   int numEnemies = (int)random(3)+1;
   for(int i = 0;i < numEnemies;i++){
@@ -26,7 +26,7 @@ void draw(){
   if(pleb.getHealth() <= 0){
     println("you lose");
     pleb.health = 100;
-    enemies = new LinkedList();
+    enemies = new ArrayList();
   }else{
     pleb.update();
     pleb.display();
