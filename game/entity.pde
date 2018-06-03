@@ -1,6 +1,7 @@
 public abstract class entity{
   float x,y;
   int health;
+  color Color;
   ArrayList<bullet> bullets;
   public int getHealth(){
     return health; 

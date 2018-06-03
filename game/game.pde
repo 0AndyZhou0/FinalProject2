@@ -22,7 +22,10 @@ void draw(){
       e.display();
     }
     for(bullet b : e.bullets){
-      if(get((int)b.getX(),(int)b.getY()) > -1){
+      if(b.getX() < 0 || b.getX() > width || b.getY() < 0 || b.getY() > height){
+        e.bullets.remove(b);
+      }
+      if(get((int)b.getX(),(int)b.getY()) == 0){
         pleb.hit(b);
       }
       b.update();
