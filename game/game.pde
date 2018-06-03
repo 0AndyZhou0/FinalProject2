@@ -18,23 +18,31 @@ void draw(){
     if(e.getHealth() <= 0){
       enemies.remove(e);
     }else{
+      e.update();
       e.display();
     }
-  }
-  //if(pleb.bullets.size() > 0){
-    for(bullet b : pleb.bullets){
-      //if(b.getX() > width || b.getY() > height){
-      //  pleb.bullets.remove(b);
-      //}
+    for(bullet b : e.bullets){
+      if(get((int)b.getX(),(int)b.getY()) > -1){
+        pleb.hit(b);
+      }
       b.update();
       b.display();
     }
-  //}
+  }
+  if(pleb.getHealth() <= 0){
+    println("you lose");
+    pleb.health = 100;
+    enemies = new ArrayList();
+  }
+  for(bullet b : pleb.bullets){
+    b.update();
+    b.display();
+  }
   text(frameRate,10,10);
 }
 
 void mouseClicked(){
-  pleb.shoot(5,5);
+  pleb.mouseShoot(5,5);
 }
 
 void keyPressed(){

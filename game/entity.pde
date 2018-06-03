@@ -26,12 +26,16 @@ public abstract class entity{
     }
   }
   
-  void shoot(int speed,int damage){
+  void mouseShoot(int speed,int damage){
     float angle = atan2(mouseY-y,mouseX-x);
-    println(angle);
-    
     bullets.add(new bullet(angle,speed,damage,x,y));
   }
+  
+  void shoot(int speed,int damage){
+    float angle = atan2(pleb.getY()-y,pleb.getX()-x);
+    bullets.add(new bullet(angle,speed,damage,x,y));
+  }
+  
   void hit(bullet b){
     addHealth(-b.getDamage());
     bullets.remove(b);
