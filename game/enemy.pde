@@ -15,8 +15,8 @@ public class enemy extends entity{
   
   public void update(){
     noStroke();
-    x += random(20) - 10;
-    y += random(20) - 10;
+    moveRight((double)random(20) - 10);
+    moveDown((double)random(20) - 10);
     if(cooldown > 0){
       cooldown--;
     }else{
@@ -29,7 +29,7 @@ public class enemy extends entity{
         bullets.remove(b);
         i--;
       }else{
-        if(b.getX() == pleb.getX() && b.getY() == pleb.getY()){
+        if(abs((int)b.getX() - (int)pleb.getX()) < 10 && abs((int)b.getY() - (int)pleb.getY()) < 10){
           hit(pleb,b);
         }
         b.update();

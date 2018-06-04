@@ -2,7 +2,7 @@ public class player extends entity{
   public player(){
    x = 400;
    y = 300;
-   health = 10;
+   health = 1;
    bullets = new LinkedList();
    
   }

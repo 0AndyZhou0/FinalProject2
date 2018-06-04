@@ -23,7 +23,7 @@ public class bullet extends entity{
     y += speed * sin(angle);
   }
   void display(){
-    fill(this.getColor());
+    fill(super.getColor());
     ellipse((int)x,(int)y,5,5);
   }
   
