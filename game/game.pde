@@ -36,6 +36,9 @@ void draw(){
     pleb.display();
   }
   text(frameRate,10,10);
+  if (enemies.size() == 0){
+   println("you win");
+  }
 }
 /*
 void setupWalls(entity being){

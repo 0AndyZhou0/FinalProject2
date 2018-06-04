@@ -1,5 +1,6 @@
 public class enemy extends entity{
-  double distance,direction,angle;
+  double distance,direction;
+  float angle;
   
   public enemy(color enemyColor){
    x = (int)random(height/2) + 100;
@@ -8,6 +9,7 @@ public class enemy extends entity{
    bullets = new LinkedList();
    this.Color = enemyColor;
    cooldown = 40;
+   direction = 3;
   }
   
   color getColor(){
@@ -46,10 +48,12 @@ public class enemy extends entity{
   public void move(){
     distance = dist(x,y,pleb.getX(),pleb.getY());
     angle = atan2(pleb.getY()-y,pleb.getX()-x);
-    if (distance > 100){
+    if (distance > 250){
       direction = abs((float)direction);
-    } else if (distance < 50){
+    } else if (distance < 150){
       direction = -1*abs((float)direction);
     }
+    x += direction * cos(angle);
+    y += direction * sin(angle);
   }
 }
