@@ -48,9 +48,9 @@ public class enemy extends entity{
   public void move(){
     distance = dist(x,y,pleb.getX(),pleb.getY());
     angle = atan2(pleb.getY()-y,pleb.getX()-x);
-    if (distance > 100){
+    if (distance > 250){
       direction = abs((float)direction);
-    } else if (distance < 50){
+    } else if (distance < 150){
       direction = -1*abs((float)direction);
     }
     x += direction * cos(angle);
