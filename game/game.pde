@@ -7,28 +7,34 @@ void setup(){
   pleb = new player();
   //setupWalls(pleb);
   int numEnemies = (int)random(4)+2;
+
   for(int i = 0;i < numEnemies;i++){
-    enemies.add(new enemy());
+    enemies.add(new enemy(i+240));
   }
 }
 
 void draw(){
   background(255);
-  pleb.display();
-  for(enemy e : enemies){
+  
+  for(int i = 0;i < enemies.size();i++){
+    enemy e = enemies.get(i);
     if(e.getHealth() <= 0){
       enemies.remove(e);
+      i--;
     }else{
-      e.display();
       e.update();
+      e.display();
     }
   }
-  //if(pleb.bullets.size() > 0){
-    for(bullet b : pleb.bullets){
-      b.update();
-      b.display();
-    }
-  //}
+  
+  if(pleb.getHealth() <= 0){
+    println("you lose");
+    pleb.health = 10;
+    enemies = new ArrayList();
+  }else{
+    pleb.update();
+    pleb.display();
+  }
   text(frameRate,10,10);
 }
 /*
@@ -62,7 +68,10 @@ void crosshair(){
 }
 
 void mouseClicked(){
-  pleb.shoot(5,5);
+  if(pleb.cooldown < 0){
+    pleb.mouseShoot(2,2);
+    pleb.cooldown = 40;
+  }
 }
 
 void keyPressed(){
