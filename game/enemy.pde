@@ -32,10 +32,17 @@ public class enemy extends entity{
         b.display();
       }
     }
+    move();
   }
   
   public void display(){
     fill(Color,0,0);
     ellipse((int)x,(int)y,20,20);
   }
+  
+  public void move(){
+    x+= random(3) - 2;
+    y+= random(3) - 2;
+  }
+  
 }
