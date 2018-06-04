@@ -1,19 +1,16 @@
 public class enemy extends entity{
   int cooldown;
   public enemy(color enemyColor){
-   x = (int)random(600) + 100;
-   y = (int)random(400) + 100;
+   x = (int)random(height/2) + 100;
+   y = (int)random(width/2) + 100;
    health = 1;
    bullets = new LinkedList();
    this.Color = enemyColor;
    cooldown = 40;
   }
   
-  color getColor(){
-    return Color;
-  }
-  
   public void update(){
+    noStroke();
     x += random(20) - 10;
     y += random(20) - 10;
     if(cooldown > 0){
@@ -22,12 +19,14 @@ public class enemy extends entity{
       shoot(2,1);
       cooldown = 100;
     }
-    for(bullet b : bullets){
+    for(int i = 0;i < bullets.size();i++){
+      bullet b = bullets.get(i);
       if(b.getX() < 0 || b.getX() > width || b.getY() < 0 || b.getY() > height){
         bullets.remove(b);
+        i--;
       }else{
         if(get((int)b.getX(),(int)b.getY()) == get((int)pleb.getX(),(int)pleb.getY())){
-          pleb.hit(b);
+          hit(pleb,b);
         }
         b.update();
         b.display();
@@ -37,6 +36,6 @@ public class enemy extends entity{
   
   public void display(){
     fill(Color,0,0);
-    rect((int)x,y,20,20);
+    ellipse((int)x,(int)y,20,20);
   }
 }

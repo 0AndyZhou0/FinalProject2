@@ -18,30 +18,29 @@ public abstract class entity{
   }
   
   public void moveDown(double amount){
-    if(y > 0 && y + 2*amount < height){
+    if(y + amount > 0 && y + amount < height){
       y += amount;
     }
   }
   public void moveRight(double amount){
-    if(x > 0 && x + 2*amount < width){
+    if(x + amount > 0 && x + amount < width){
       x += amount;
     }
   }
   
-  void mouseShoot(int speed,int damage){
-    float angle = atan2(mouseY-y,mouseX-x);
-    bullets.add(new bullet(angle,speed,damage,x,y));
-  }
+  
   
   void shoot(int speed,int damage){
     float angle = atan2(pleb.getY()-y,pleb.getX()-x);
     bullets.add(new bullet(angle,speed,damage,x,y));
   }
   
-  void hit(bullet b){
-    addHealth(-b.getDamage());
+  void hit(entity e,bullet b){
+    e.addHealth(-b.getDamage());
     bullets.remove(b);
   }
   
-  
+  color getColor(){
+    return Color;
+  }
 }

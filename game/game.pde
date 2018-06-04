@@ -7,16 +7,18 @@ void setup(){
   pleb = new player();
   int numEnemies = (int)random(3)+1;
   for(int i = 0;i < numEnemies;i++){
-    //enemies.add(new enemy(i+240));
+    enemies.add(new enemy(i+240));
   }
 }
 
 void draw(){
   background(255);
   
-  for(enemy e : enemies){
+  for(int i = 0;i < enemies.size();i++){
+    enemy e = enemies.get(i);
     if(e.getHealth() <= 0){
       enemies.remove(e);
+      i--;
     }else{
       e.update();
       e.display();
@@ -25,7 +27,7 @@ void draw(){
   
   if(pleb.getHealth() <= 0){
     println("you lose");
-    pleb.health = 100;
+    pleb.health = 1000;
     enemies = new ArrayList();
   }else{
     pleb.update();
