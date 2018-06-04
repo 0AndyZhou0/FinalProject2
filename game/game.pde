@@ -24,7 +24,6 @@ void draw(){
     }else{
       e.update();
       e.display();
-      e.update();
     }
   }
   
@@ -69,7 +68,10 @@ void crosshair(){
 }
 
 void mouseClicked(){
-  pleb.mouseShoot(8,2);
+  if(pleb.cooldown < 0){
+    pleb.mouseShoot(2,2);
+    pleb.cooldown = 40;
+  }
 }
 
 void keyPressed(){

@@ -1,5 +1,7 @@
 public class enemy extends entity{
-  int cooldown;
+  double distance;
+  boolean direction;
+  
   public enemy(color enemyColor){
    x = (int)random(height/2) + 100;
    y = (int)random(width/2) + 100;
@@ -15,8 +17,9 @@ public class enemy extends entity{
   
   public void update(){
     noStroke();
-    x += random(20) - 10;
-    y += random(20) - 10;
+    moveRight((double)random(20) - 10);
+    moveDown((double)random(20) - 10);
+    distance = dist(x,y,pleb.getX(),pleb.getY());
     if(cooldown > 0){
       cooldown--;
     }else{
@@ -29,7 +32,7 @@ public class enemy extends entity{
         bullets.remove(b);
         i--;
       }else{
-        if(b.getX() == pleb.getX() && b.getY() == pleb.getY()){
+        if(abs((int)b.getX() - (int)pleb.getX()) < 10 && abs((int)b.getY() - (int)pleb.getY()) < 10){
           hit(pleb,b);
         }
         b.update();
@@ -45,8 +48,14 @@ public class enemy extends entity{
   }
   
   public void move(){
-    x+= random(3) - 2;
-    y+= random(3) - 2;
+    if (distance > 100){
+     moveTowards(true); 
+    } else if (distance < ){
+     moveTowards(false); 
+    } else {
+      moveTowards(direction);
+      direction = !direction;
+    }
   }
   
 }
