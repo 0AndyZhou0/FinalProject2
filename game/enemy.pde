@@ -1,4 +1,6 @@
 public class enemy extends entity{
+  double distance,direction,angle;
+  
   public enemy(color enemyColor){
    x = (int)random(height/2) + 100;
    y = (int)random(width/2) + 100;
@@ -14,8 +16,6 @@ public class enemy extends entity{
   
   public void update(){
     noStroke();
-    moveRight((double)random(20) - 10);
-    moveDown((double)random(20) - 10);
     if(cooldown > 0){
       cooldown--;
     }else{
@@ -35,10 +35,21 @@ public class enemy extends entity{
         b.display();
       }
     }
+    move();
   }
   
   public void display(){
     fill(Color,0,0);
     ellipse((int)x,(int)y,20,20);
+  }
+  
+  public void move(){
+    distance = dist(x,y,pleb.getX(),pleb.getY());
+    angle = atan2(pleb.getY()-y,pleb.getX()-x);
+    if (distance > 100){
+      direction = abs((float)direction);
+    } else if (distance < 50){
+      direction = -1*abs((float)direction);
+    }
   }
 }
