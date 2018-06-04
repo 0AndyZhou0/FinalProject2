@@ -5,6 +5,7 @@ void setup(){
   size(800,600);
   enemies = new ArrayList();
   pleb = new player();
+  setupWalls(pleb);
   int numEnemies = (int)random(4)+2;
   for(int i = 0;i < numEnemies;i++){
     enemies.add(new enemy());
@@ -29,6 +30,10 @@ void draw(){
     }
   //}
   text(frameRate,10,10);
+}
+void setupWalls(entity being){
+  int a = being.getX();
+  int b = being.getY();
 }
 
 void crosshair(){
