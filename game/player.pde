@@ -4,7 +4,7 @@ public class player extends entity{
    y = 300;
    health = 10;
    bullets = new LinkedList();
-   Color = 0;
+   
   }
   
   public void update(){

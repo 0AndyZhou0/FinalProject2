@@ -27,7 +27,7 @@ void draw(){
   
   if(pleb.getHealth() <= 0){
     println("you lose");
-    pleb.health = 1000;
+    pleb.health = 10;
     enemies = new ArrayList();
   }else{
     pleb.update();

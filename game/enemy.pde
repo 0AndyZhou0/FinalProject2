@@ -9,6 +9,10 @@ public class enemy extends entity{
    cooldown = 40;
   }
   
+  color getColor(){
+    return Color;
+  }
+  
   public void update(){
     noStroke();
     x += random(20) - 10;
@@ -25,7 +29,7 @@ public class enemy extends entity{
         bullets.remove(b);
         i--;
       }else{
-        if(get((int)b.getX(),(int)b.getY()) == get((int)pleb.getX(),(int)pleb.getY())){
+        if(b.getX() == pleb.getX() && b.getY() == pleb.getY()){
           hit(pleb,b);
         }
         b.update();
