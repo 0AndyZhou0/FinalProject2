@@ -1,5 +1,6 @@
 import java.util.*;
 public abstract class entity{
+  int cooldown;
   float x,y;
   int health;
   color Color;

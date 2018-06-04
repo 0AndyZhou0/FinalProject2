@@ -37,7 +37,10 @@ void draw(){
 }
 
 void mouseClicked(){
-  pleb.mouseShoot(2,2);
+  if(pleb.cooldown < 0){
+    pleb.mouseShoot(2,2);
+    pleb.cooldown = 40;
+  }
 }
 
 void keyPressed(){

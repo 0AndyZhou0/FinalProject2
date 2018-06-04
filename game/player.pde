@@ -4,10 +4,11 @@ public class player extends entity{
    y = 300;
    health = 1;
    bullets = new LinkedList();
-   
+   cooldown = 40;
   }
   
   public void update(){
+    cooldown--;
     for(int i = 0;i < bullets.size();i++){
       bullet b = bullets.get(i);
       if(b.getX() < 0 || b.getX() > width || b.getY() < 0 || b.getY() > height){

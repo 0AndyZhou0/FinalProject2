@@ -1,5 +1,4 @@
 public class enemy extends entity{
-  int cooldown;
   public enemy(color enemyColor){
    x = (int)random(height/2) + 100;
    y = (int)random(width/2) + 100;
