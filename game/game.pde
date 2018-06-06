@@ -1,8 +1,10 @@
 player pleb;
 ArrayList<enemy> enemies;
+int[][] wallCoor;
 
 void setup(){
-  size(800,600);
+  size(600,600);
+  
   enemies = new ArrayList();
   pleb = new player();
   //setupWalls(pleb);
@@ -76,7 +78,7 @@ void crosshair(){
 void mouseClicked(){
   if(pleb.cooldown < 0){
     pleb.mouseShoot(2,2);
-    pleb.cooldown = 40;
+    pleb.cooldown = 5;
   }
 }
 
