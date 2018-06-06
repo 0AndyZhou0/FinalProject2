@@ -11,11 +11,11 @@ void setup(){
   for(int i = 0;i < numEnemies;i++){
     enemies.add(new enemy(i+240));
   }
+  noCursor();
 }
 
 void draw(){
   background(255);
-  
   for(int i = 0;i < enemies.size();i++){
     enemy e = enemies.get(i);
     if(e.getHealth() <= 0){
@@ -41,6 +41,7 @@ void draw(){
     println("you win");
     exit();
   }
+  crosshair();
 }
 /*
 void setupWalls(entity being){
