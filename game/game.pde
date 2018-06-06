@@ -31,13 +31,15 @@ void draw(){
     println("you lose");
     pleb.health = 10;
     enemies = new ArrayList();
+    exit();
   }else{
     pleb.update();
     pleb.display();
   }
   text(frameRate,10,10);
   if (enemies.size() == 0){
-   println("you win");
+    println("you win");
+    exit();
   }
 }
 /*

@@ -1,5 +1,5 @@
 public class enemy extends entity{
-  double distance,direction;
+  double distance;
   float angle;
   
   public enemy(color enemyColor){
@@ -48,12 +48,12 @@ public class enemy extends entity{
   public void move(){
     distance = dist(x,y,pleb.getX(),pleb.getY());
     angle = atan2(pleb.getY()-y,pleb.getX()-x);
-    if (distance > 250){
+    if (distance > 350){
       direction = abs((float)direction);
     } else if (distance < 150){
       direction = -1*abs((float)direction);
     }
-    x += direction * cos(angle);
-    y += direction * sin(angle);
+    moveRight(direction*cos(angle));
+    moveDown(direction*sin(angle));
   }
 }

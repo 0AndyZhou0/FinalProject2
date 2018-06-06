@@ -4,6 +4,7 @@ public abstract class entity{
   float x,y;
   int health;
   color Color;
+  double direction = 0;
   LinkedList<bullet> bullets;
   public int getHealth(){
     return health; 
@@ -21,11 +22,15 @@ public abstract class entity{
   public void moveDown(double amount){
     if(y + amount > 0 && y + amount < height){
       y += amount;
+    }else{
+      direction*=-1;
     }
   }
   public void moveRight(double amount){
     if(x + amount > 0 && x + amount < width){
       x += amount;
+    }else{
+      direction*=-1;
     }
   }
   
