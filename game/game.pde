@@ -81,15 +81,15 @@ void mouseClicked(){
 
 void keyPressed(){
   if(key == 'w'){
-    pleb.moveDown(-10);
+    pleb.moveDown(-15);
   }
   if(key == 'a'){
-    pleb.moveRight(-10);
+    pleb.moveRight(-15);
   }
   if(key == 's'){
-    pleb.moveDown(10);
+    pleb.moveDown(15);
   }
   if(key == 'd'){
-    pleb.moveRight(10);
+    pleb.moveRight(15);
   }
 }

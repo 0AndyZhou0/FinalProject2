@@ -7,7 +7,7 @@ public class enemy extends entity{
    y = (int)random(width/2) + 100;
    health = 1;
    bullets = new LinkedList();
-   this.Color = enemyColor;
+   Color = enemyColor;
    cooldown = 40;
    direction = 3;
   }
@@ -30,7 +30,7 @@ public class enemy extends entity{
         bullets.remove(b);
         i--;
       }else{
-        if(abs((int)b.getX() - (int)pleb.getX()) < 10 && abs((int)b.getY() - (int)pleb.getY()) < 10){
+        if(pow((float)b.getX()-(float)pleb.getX(),2) + pow((float)b.getY()-(float)pleb.getY(),2) < 400){
           hit(pleb,b);
         }
         b.update();
@@ -42,7 +42,7 @@ public class enemy extends entity{
   
   public void display(){
     fill(Color,0,0);
-    ellipse((int)x,(int)y,20,20);
+    ellipse((int)x,(int)y,40,40);
   }
   
   public void move(){

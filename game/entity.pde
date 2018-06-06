@@ -36,7 +36,7 @@ public abstract class entity{
   
   void shoot(int speed,int damage){
     float angle = atan2(pleb.getY()-y,pleb.getX()-x);
-    bullets.add(new bullet(angle,speed,damage,x,y));
+    bullets.add(new bullet(angle,speed,damage,x,y,color(Color,0,0)));
   }
   
   void hit(entity e,bullet b){

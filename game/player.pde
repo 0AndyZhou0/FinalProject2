@@ -17,7 +17,7 @@ public class player extends entity{
       }else{
         for(int x = 0;x < enemies.size();x++){
           enemy e = enemies.get(x);
-          if(get((int)b.getX(),(int)b.getY()) == get((int)e.getX(),(int)e.getY())){
+          if(pow((float)b.getX()-(float)e.getX(),2) + pow((float)b.getY()-(float)e.getY(),2) < 400){
               pleb.hit(e,b);
           }
         }
@@ -29,11 +29,11 @@ public class player extends entity{
   
   public void display(){
     fill(0);
-    ellipse((int)x,(int)y,20,20);
+    ellipse((int)x,(int)y,40,40);
   }
   
   void mouseShoot(int speed,int damage){
     float angle = atan2(mouseY-y,mouseX-x);
-    bullets.add(new bullet(angle,speed,damage,x,y));
+    bullets.add(new bullet(angle,speed,damage,x,y,0));
   }
 }
