@@ -18,6 +18,9 @@ public abstract class entity{
   public void addHealth(int amount){
     health += amount; 
   }
+  public void resetBullets(){
+    bullets = new LinkedList<bullet>();
+  }
   
   public void moveDown(double amount){
     if(y + amount > 0 && y + amount < height){

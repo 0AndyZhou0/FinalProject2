@@ -1,6 +1,7 @@
 player pleb;
 ArrayList<enemy> enemies;
 int[][] wallCoor;
+int wins = 0;
 
 void setup(){
   size(600,600);
@@ -13,7 +14,19 @@ void setup(){
   for(int i = 0;i < numEnemies;i++){
     enemies.add(new enemy(i+240));
   }
-  noCursor();
+  //noCursor();
+}
+void setup(int win){
+  size(600,600);
+  
+  //enemies = new ArrayList();
+  //pleb = new player();
+  //setupWalls(pleb);
+  int numEnemies = (int)random(4)+2+win;
+  for(int i = 0;i < numEnemies;i++){
+    enemies.add(new enemy(i+240));
+  }
+  //noCursor();
 }
 
 void draw(){
@@ -30,25 +43,30 @@ void draw(){
   }
   
   if(pleb.getHealth() <= 0){
-    println("you lose");
+    println("you lose. You won " + " games. Try again?");
     pleb.health = 10;
-    enemies = new ArrayList();
+    //enemies = new ArrayList();
     exit();
   }else{
     pleb.update();
     pleb.display();
   }
   text(frameRate,10,10);
-  //if (enemies.size() == 0){
-   //println("you win");
-  //aaa}
+  text("health: " + pleb.getHealth(), 500, 580);
+  text("wins: " + wins, 500, 600);
+  if (enemies.size() == 0){
+    wins += 1;
+    pleb.resetBullets();
+    println("you win. you have won " + wins + " game(s) already. Your health is currently " + pleb.getHealth() + ".");
+    setup(wins);
+  }
 }
 /*
 void setupWalls(entity being){
   int a = being.getX();
   int b = being.getY();
   int tall = 20;
-  int wide = 20;
+  int wide = 20;sssssss
   int squareSide = 25;
   a+= squareSide;
   b+= squareSide;
