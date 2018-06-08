@@ -3,7 +3,7 @@ ArrayList<enemy> enemies;
 int[][] wallCoor;
 
 void setup(){
-  size(600,600);
+  size(800,600);
   
   enemies = new ArrayList();
   pleb = new player();
@@ -78,13 +78,15 @@ void crosshair(){
 void mouseClicked(){
   if(pleb.cooldown < 0){
     pleb.mouseShoot(2,2);
-    pleb.cooldown = 5;
+    pleb.cooldown = 30;
   }
 }
 
 void keyPressed(){
   if(key == 'w'){
-    pleb.moveDown(-15);
+    if(pleb.y > 25){
+      pleb.moveDown(-15);
+    }
   }
   if(key == 'a'){
     pleb.moveRight(-15);
@@ -94,5 +96,8 @@ void keyPressed(){
   }
   if(key == 'd'){
     pleb.moveRight(15);
+  }
+  if(key == ' '){
+    pleb.update();
   }
 }
