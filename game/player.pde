@@ -27,15 +27,18 @@ public class player extends entity{
         b.display();
       }
     }
-    if(up){y-=5;}
-    if(left){x-=5;}
-    if(down){y+=5;}
-    if(right){x+=5;}
+    if(up){moveDown(-5);}
+    if(left){moveRight(-5);}
+    if(down){moveDown(5);}
+    if(right){moveRight(5);}
     if(special){special();}
   }
   
   void special(){
     for(bullet b:bullets){
+      b.update();
+      b.update();
+      b.update();
       b.update();
     }
   }

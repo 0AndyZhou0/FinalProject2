@@ -43,36 +43,6 @@ void draw(){
     println("you win");
     exit();
   }
-  crosshair();
-}
-/*
-void setupWalls(entity being){
-  int a = being.getX();
-  int b = being.getY();
-  int tall = 20;
-  int wide = 20;
-  int squareSide = 25;
-  a+= squareSide;
-  b+= squareSide;
-  for (int i = 0; i < squareSide * 4; i++){
-     if (i < squareSide){
-       a += 20;
-     } else if(i < 2 * squareSide){
-       b -= 20;
-     } else if(i < 3 * squareSide){
-       a -= 20;
-     } else if(i < 4 * squareSide){
-       b += 20;
-     }
-     fill(0);
-     rect(a,b,wide,tall);
-     
-  }
-  
-}
-*/
-void crosshair(){
-  ellipse(mouseX,mouseY,10,10);
 }
 
 void mouseClicked(){
@@ -83,37 +53,17 @@ void mouseClicked(){
 }
 
 void keyPressed(){
-  if(key == 'w'){
-    pleb.up = true;
-  }
-  if(key == 'a'){
-    pleb.left = true;
-  }
-  if(key == 's'){
-    pleb.down = true;
-  }
-  if(key == 'd'){
-    pleb.right = true;
-  }
-  if(key == ' '){
-    pleb.special = true;
-  }
+  if(key == 'w'){pleb.up = true;}
+  if(key == 'a'){pleb.left = true;}
+  if(key == 's'){pleb.down = true;}
+  if(key == 'd'){pleb.right = true;}
+  if(key == ' '){pleb.special = true;}
 }
 
 void keyReleased(){
-  if(key == 'w'){
-    pleb.up = false;
-  }
-  if(key == 'a'){
-    pleb.left = false;
-  }
-  if(key == 's'){
-    pleb.down = false;
-  }
-  if(key == 'd'){
-    pleb.right = false;
-  }
-  if(key == ' '){
-    pleb.special = false;
-  }
+  if(key == 'w'){pleb.up = false;}
+  if(key == 'a'){pleb.left = false;}
+  if(key == 's'){pleb.down = false;}
+  if(key == 'd'){pleb.right = false;}
+  if(key == ' '){pleb.special = false;}
 }
