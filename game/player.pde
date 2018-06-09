@@ -7,6 +7,8 @@ public class player extends entity{
    cooldown = 40;
   }
   
+  boolean up,left,down,right;
+  
   public void update(){
     cooldown--;
     for(int i = 0;i < bullets.size();i++){
@@ -25,6 +27,10 @@ public class player extends entity{
         b.display();
       }
     }
+    if(up){y-=5;}
+    if(left){x-=5;}
+    if(down){y+=5;}
+    if(right){x+=5;}
   }
   
   public void display(){

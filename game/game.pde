@@ -84,18 +84,34 @@ void mouseClicked(){
 
 void keyPressed(){
   if(key == 'w'){
-    if(pleb.y > 25){
-      pleb.moveDown(-15);
-    }
+    pleb.up = true;
   }
   if(key == 'a'){
-    pleb.moveRight(-15);
+    pleb.left = true;
   }
   if(key == 's'){
-    pleb.moveDown(15);
+    pleb.down = true;
   }
   if(key == 'd'){
-    pleb.moveRight(15);
+    pleb.right = true;
+  }
+  if(key == ' '){
+    pleb.update();
+  }
+}
+
+void keyReleased(){
+  if(key == 'w'){
+    pleb.up = false;
+  }
+  if(key == 'a'){
+    pleb.left = false;
+  }
+  if(key == 's'){
+    pleb.down = false;
+  }
+  if(key == 'd'){
+    pleb.right = false;
   }
   if(key == ' '){
     pleb.update();
