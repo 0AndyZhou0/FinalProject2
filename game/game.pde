@@ -96,7 +96,7 @@ void keyPressed(){
     pleb.right = true;
   }
   if(key == ' '){
-    pleb.update();
+    pleb.special = true;
   }
 }
 
@@ -114,6 +114,6 @@ void keyReleased(){
     pleb.right = false;
   }
   if(key == ' '){
-    pleb.update();
+    pleb.special = false;
   }
 }

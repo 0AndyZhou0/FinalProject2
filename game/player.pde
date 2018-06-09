@@ -7,7 +7,7 @@ public class player extends entity{
    cooldown = 40;
   }
   
-  boolean up,left,down,right;
+  boolean up,left,down,right,special;
   
   public void update(){
     cooldown--;
@@ -31,6 +31,13 @@ public class player extends entity{
     if(left){x-=5;}
     if(down){y+=5;}
     if(right){x+=5;}
+    if(special){special();}
+  }
+  
+  void special(){
+    for(bullet b:bullets){
+      b.update();
+    }
   }
   
   public void display(){
