@@ -9,8 +9,9 @@ class block{
   }
   
  void update(){
-   if(abs(pleb.getX() - x) < 10 && abs(pleb.getY() - y) < 10){
-     
-   }
+   //if(abs(pleb.getX() - x) < 10 && abs(pleb.getY() - y) < 10){
+   //  x++;
+   //}
+   rect(500,500,50,50);
  }
 }
