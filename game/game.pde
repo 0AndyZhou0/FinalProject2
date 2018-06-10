@@ -7,13 +7,11 @@ void setup(){
   
   enemies = new ArrayList();
   pleb = new player();
-  //setupWalls(pleb);
   int numEnemies = (int)random(4)+2;
 
   for(int i = 0;i < numEnemies;i++){
     enemies.add(new enemy(i+240));
   }
-  noCursor();
 }
 
 void draw(){
