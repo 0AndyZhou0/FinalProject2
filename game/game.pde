@@ -1,10 +1,11 @@
 player pleb;
 ArrayList<enemy> enemies;
 int[][] wallCoor;
+room Room;
 
 void setup(){
   size(800,600);
-  
+  Room = new room();
   enemies = new ArrayList();
   pleb = new player();
   int numEnemies = (int)random(4)+2;
