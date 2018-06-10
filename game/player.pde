@@ -1,10 +1,12 @@
 public class player extends entity{
+  PImage player;
   public player(){
    x = 400;
    y = 300;
    health = 100;
    bullets = new LinkedList();
    cooldown = 40;
+   player = loadImage("knight.png");
   }
   
   boolean up,left,down,right,special;
@@ -44,8 +46,7 @@ public class player extends entity{
   }
   
   public void display(){
-    fill(0);
-    ellipse((int)x,(int)y,40,40);
+    image(player,x-45,y-45,80,80);
   }
   
   void mouseShoot(int speed,int damage){

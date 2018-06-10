@@ -4,6 +4,8 @@ class block{
   public block(boolean wall,boolean destructible){
     isWall = wall;
     isDestructible = destructible;
+    x = 500;
+    y = 500;
   }
   
  void update(){
