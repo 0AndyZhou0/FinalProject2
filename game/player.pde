@@ -1,15 +1,18 @@
 public class player extends entity{
   PImage player;
+  int mana;
   public player(){
    x = 400;
    y = 300;
-   health = 100;
+   health = 10;
    bullets = new LinkedList();
    cooldown = 40;
    player = loadImage("knight.png");
+   mana = 150;
+   weapon = 1;
   }
   
-  boolean up,left,down,right,special;
+  boolean up,left,down,right,special,shooting;
   
   public void update(){
     cooldown--;
@@ -34,6 +37,18 @@ public class player extends entity{
     if(down){moveDown(5);}
     if(right){moveRight(5);}
     if(special){special();}
+    if(shooting){
+      if(pleb.cooldown < 0){
+        if(pleb.weapon == 0){
+          pleb.mouseShoot(10,2);
+          pleb.cooldown = 30;
+        }
+        if(pleb.weapon == 1){
+          pleb.mouseShoot(10,1);
+          pleb.cooldown = 10;
+        }
+      }
+    }
   }
   
   void special(){

@@ -6,6 +6,7 @@ public abstract class entity{
   color Color;
   double direction = 0;
   LinkedList<bullet> bullets;
+  int weapon;
   public int getHealth(){
     return health; 
   }
@@ -44,11 +45,6 @@ public abstract class entity{
     }
   }
   
-  void shoot(int speed,int damage){
-    float angle = atan2(pleb.getY()-y,pleb.getX()-x);
-    bullets.add(new bullet(angle,speed,damage,x,y,color(Color,0,0)));
-  }
-  
   void hit(entity e,bullet b){
     e.addHealth(-b.getDamage());
     bullets.remove(b);
@@ -56,5 +52,13 @@ public abstract class entity{
   
   color getColor(){
     return Color;
+  }
+  
+  
+  void shoot(int speed,int damage){
+    if(weapon == 0 || weapon == 1){
+      float angle = atan2(pleb.getY()-y,pleb.getX()-x);
+      bullets.add(new bullet(angle,speed,damage,x,y,color(Color,0,0)));
+    }
   }
 }

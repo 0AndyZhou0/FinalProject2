@@ -32,11 +32,12 @@ void draw(){
   }
 }
 
-void mouseClicked(){
-  if(pleb.cooldown < 0){
-    pleb.mouseShoot(2,2);
-    pleb.cooldown = 30;
-  }
+void mousePressed(){
+  pleb.shooting = true;
+}
+
+void mouseReleased(){
+  pleb.shooting = false;
 }
 
 void keyPressed(){
