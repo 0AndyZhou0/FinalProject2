@@ -1,9 +1,8 @@
 class block{
-  boolean isWall,isDestructible;
+  boolean isWall;
   int x,y;
-  public block(boolean wall,boolean destructible, int xCoor, int yCoor){
+  public block(boolean wall, int xCoor, int yCoor){
     isWall = wall;
-    isDestructible = destructible;
     x = xCoor;
     y = yCoor;
   }

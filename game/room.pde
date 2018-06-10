@@ -6,14 +6,29 @@ class room{
     enemies = new LinkedList();
     for(int i = 0; i < 58;i++){
       if(i < 16){
-        room[i] = new block(true,false,50*i,0); 
+        if (i != 6 && i != 7 && i != 8 && i != 9){
+          room[i] = new block(true,50*i,0);
+        } else {
+          room[i] = new block(true,0,0); 
+        }
       }else if (i < 28){
-       //println("Hehe");
-        room[i] = new block(true,false,750,(i%16)*50);//i*50-600); 
+        if (i != 20 && i != 21 && i != 22 && i != 23){
+          room[i] = new block(true,750,(i%16)*50);//i*50-600);
+        } else {
+          room[i] = new block(true,0,0);
+        }
       } else if (i < 44){
-        room[i] = new block(true,false,750-(i%28)*50,550);
+        if (i != 34 && i != 35 && i != 36 && i != 37){
+          room[i] = new block(true,750-(i%28)*50,550);
+        } else {
+          room[i] = new block(true,0,0);
+        }
       } else {
-        room[i] = new block(true,false,0,550-(i%44)*50); 
+        if (i != 48 && i != 49 && i != 50 && i != 51){ 
+          room[i] = new block(true,0,550-(i%44)*50);
+        } else {
+          room[i] = new block(true,0,0);
+        }
       }
     }
     int numEnemies = (int)random(4)+2;

@@ -27,8 +27,8 @@ void draw(){
   }
   text(frameRate,10,10);
   if (rooms[0][0].getEnemies().size() == 0){
-    println("you win");
-    exit();
+    println("Stage Cleared");
+    //exit();
   }
 }
 
