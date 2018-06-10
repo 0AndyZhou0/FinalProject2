@@ -2,7 +2,7 @@ class room{
   LinkedList<enemy> enemies;
   //24x18 chunks sound decent
   block[][] room = new block[18][24];
-  room(){
+  void room(){
     enemies = new LinkedList();
     for(int r = 0;r < 18;r++){
       for(int c = 0;c < 24;c++){
