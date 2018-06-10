@@ -1,44 +1,32 @@
 player pleb;
-ArrayList<enemy> enemies;
 int[][] wallCoor;
-room Room;
+room[][] rooms = new room[1][1];
 
 void setup(){
   size(800,600);
-  Room = new room();
-  enemies = new ArrayList();
+  
+  rooms[0][0] = new room();
+  
   pleb = new player();
-  int numEnemies = (int)random(4)+2;
-
-  for(int i = 0;i < numEnemies;i++){
-    enemies.add(new enemy(i+240));
-  }
 }
 
 void draw(){
   background(255);
-  for(int i = 0;i < enemies.size();i++){
-    enemy e = enemies.get(i);
-    if(e.getHealth() <= 0){
-      enemies.remove(e);
-      i--;
-    }else{
-      e.update();
-      e.display();
+  for(room[] temp:rooms){
+    for(room r:temp){
+      r.update();
     }
   }
   
   if(pleb.getHealth() <= 0){
     println("you lose");
-    pleb.health = 10;
-    enemies = new ArrayList();
     exit();
   }else{
     pleb.update();
     pleb.display();
   }
   text(frameRate,10,10);
-  if (enemies.size() == 0){
+  if (rooms[0][0].getEnemies().size() == 0){
     println("you win");
     exit();
   }
