@@ -1,11 +1,11 @@
 class block{
   boolean isWall,isDestructible;
   int x,y;
-  public block(boolean wall,boolean destructible){
+  public block(boolean wall,boolean destructible, int xCoor, int yCoor){
     isWall = wall;
     isDestructible = destructible;
-    x = 500;
-    y = 500;
+    x = xCoor;
+    y = yCoor;
   }
   
  void update(){
@@ -13,6 +13,6 @@ class block{
    //  x++;
    //}
    fill(0);
-   rect(500,500,50,50);
+   rect(x,y,50,50);
  }
 }

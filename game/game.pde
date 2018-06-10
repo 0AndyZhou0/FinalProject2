@@ -3,7 +3,7 @@ int[][] wallCoor;
 room[][] rooms = new room[1][1];
 
 void setup(){
-  size(800,600);
+  size(800,600);//16+16+11+11
   
   rooms[0][0] = new room();
   
