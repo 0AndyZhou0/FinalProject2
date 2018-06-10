@@ -9,7 +9,7 @@ public class player extends entity{
    cooldown = 40;
    player = loadImage("knight.png");
    mana = 150;
-   weapon = 1;
+   weapon = 2;
   }
   
   boolean up,left,down,right,special,shooting;
@@ -25,7 +25,7 @@ public class player extends entity{
         for(int x = 0;x < rooms[0][0].enemies.size();x++){
           enemy e = rooms[0][0].enemies.get(x);
           if(pow((float)b.getX()-(float)e.getX(),2) + pow((float)b.getY()-(float)e.getY(),2) < 400){
-              pleb.hit(e,b);
+              hit(e,b);
           }
         }
         b.update();
@@ -38,14 +38,29 @@ public class player extends entity{
     if(right){moveRight(5);}
     if(special){special();}
     if(shooting){
-      if(pleb.cooldown < 0){
-        if(pleb.weapon == 0){
-          pleb.mouseShoot(10,2);
-          pleb.cooldown = 30;
+      if(cooldown < 0){
+        if(weapon == 0){
+          mouseShoot(10,2);
+          cooldown = 30;
         }
-        if(pleb.weapon == 1){
-          pleb.mouseShoot(10,1);
-          pleb.cooldown = 10;
+        if(weapon == 1){
+          mouseShoot(10,1);
+          cooldown = 10;
+        }
+        if(weapon == 2){
+          for(int i = 0;i < 6;i++){
+            float angle = atan2(mouseY-y,mouseX-x) + random(radians(20)) - radians(10);
+            bullets.add(new bullet(angle,10,1,x,y,0));
+          }
+          cooldown = 50;
+        }
+        
+        if(weapon == -1){
+          for(int i = 0;i < 100;i++){
+            float angle = atan2(mouseY-y,mouseX-x) + random(radians(360));
+            bullets.add(new bullet(angle,10,1,x,y,0));
+          }
+          cooldown = 0;
         }
       }
     }

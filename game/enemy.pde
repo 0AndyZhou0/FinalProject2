@@ -5,12 +5,12 @@ public class enemy extends entity{
   public enemy(color enemyColor){
    x = (int)random(height/2) + 100;
    y = (int)random(width/2) + 100;
-   health = 1;
+   health = 6;
    bullets = new LinkedList();
    Color = enemyColor;
    cooldown = 40;
    direction = 3;
-   weapon = (int)random(2);
+   weapon = 2;//(int)random(2);
   }
   
   color getColor(){
@@ -29,6 +29,10 @@ public class enemy extends entity{
       if(weapon == 1){
         shoot(10,1);
         cooldown = 20;
+      }
+      if(weapon == 2){
+        shoot(10,1);
+        cooldown = 50;
       }
     }
     for(int i = 0;i < bullets.size();i++){

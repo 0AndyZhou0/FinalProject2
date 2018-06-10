@@ -22,7 +22,7 @@ public class bullet extends entity{
   void update(){
     x += speed * cos(angle);
     y += speed * sin(angle);
-    for(block b:rooms[0][0].room){
+    for(block b:room){
       if(abs(x-b.x-25) < 25 && abs(y-b.y-25) < 25){
         x = 1000;
         y = 1000;

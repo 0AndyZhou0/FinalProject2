@@ -23,7 +23,7 @@ public abstract class entity{
   public void moveDown(double amount){
     if(y + amount > 0 && y + amount < height){
       y += amount;
-      for(block b:rooms[0][0].room){
+      for(block b:room){
         if(abs(x-b.x-25) < 45 && abs(y-b.y-25) < 45){
           y-=amount;
         }
@@ -35,7 +35,7 @@ public abstract class entity{
   public void moveRight(double amount){
     if(x + amount > 0 && x + amount < width){
       x += amount;
-      for(block b:rooms[0][0].room){
+      for(block b:room){
         if(abs(x-b.x-25) < 45 && abs(y-b.y-25) < 45){
           x-=amount;
         }
@@ -59,6 +59,12 @@ public abstract class entity{
     if(weapon == 0 || weapon == 1){
       float angle = atan2(pleb.getY()-y,pleb.getX()-x);
       bullets.add(new bullet(angle,speed,damage,x,y,color(Color,0,0)));
+    }
+    if(weapon == 2){
+      for(int i = 0;i < 6;i++){
+        float angle = atan2(pleb.getY()-y,pleb.getX()-x) + random(radians(20)) - radians(10);
+        bullets.add(new bullet(angle,10,1,x,y,0));
+      }
     }
   }
 }
