@@ -22,6 +22,13 @@ public abstract class entity{
   public void moveDown(double amount){
     if(y + amount > 0 && y + amount < height){
       y += amount;
+      for(block[] temp:rooms[0][0].room){
+        for(block b:temp){
+          if(abs(x-b.x-25) < 50 && abs(y-b.y-25) < 50){
+            y-=amount;
+          }
+        }
+      }
     }else{
       direction*=-1;
     }
@@ -29,6 +36,13 @@ public abstract class entity{
   public void moveRight(double amount){
     if(x + amount > 0 && x + amount < width){
       x += amount;
+      for(block[] temp:rooms[0][0].room){
+        for(block b:temp){
+          if(abs(x-b.x-25) < 50 && abs(y-b.y-25) < 50){
+            x-=amount;
+          }
+        }
+      }
     }else{
       direction*=-1;
     }
