@@ -9,7 +9,7 @@ public class player extends entity{
    cooldown = 40;
    player = loadImage("knight.png");
    mana = 150;
-   weapon = 2;
+   weapon = -1;
   }
   
   boolean up,left,down,right,special,shooting;
@@ -58,7 +58,7 @@ public class player extends entity{
         if(weapon == -1){
           for(int i = 0;i < 100;i++){
             float angle = atan2(mouseY-y,mouseX-x) + random(radians(360));
-            bullets.add(new bullet(angle,10,1,x,y,0));
+            bullets.add(new bullet(angle,10,10,x,y,0));
           }
           cooldown = 0;
         }
