@@ -1,12 +1,21 @@
 player pleb;
+int bigX;
+int bigY;
 int roomNum = 0;
 int currentRoom = 0;
 room[] rooms;
 map level;
 block[] room = new block[58];
-
+char[][] world = {{'#','#','#','R','#','R'},
+                  {'#','R','R','R','R','R'},
+                  {'#','R','#','R','#','R'},
+                  {'#','R','R','V','#','R'},
+                  {'#','R','R','#','R','R'},
+                  {'#','#','#','#','#','R'}};
 void setup(){
   size(800,600);//16+16+11+11
+  bigX = 3;
+  bigY = 3;
   level = new map();
   pleb = new player();
   rooms = new room[19];
@@ -58,15 +67,34 @@ void draw(){
   if (rooms[roomNum].enemies.size() == 0){
     if(pleb.x < 50){
       level.moveLeft();
+      bigX-=1;
     }
     if(pleb.x > 750){
       level.moveRight();
+      bigX+=1;
     }
     if(pleb.y < 50){
       level.moveUp();
+      bigY-=1;
     }
     if(pleb.y > 550){
       level.moveDown();
+      bigY+=1;
+    }
+  }
+  world[bigY][bigX] = 'V';
+  fill(100);
+  rect(690,490,100,100);
+  for (int i = 0; i < world.length; i++){
+    for (int j = 0; j < world[0].length; j++){
+      if (world[i][j] == 'R'){
+       fill(255);
+       rect(700 + j*15, 500 + i*15, 10, 10);
+      } else if (world[i][j] == 'V'){        
+       fill(0);
+       rect(700 + j*15, 500 + i*15, 10, 10);
+      } 
+      
     }
   }
 }
