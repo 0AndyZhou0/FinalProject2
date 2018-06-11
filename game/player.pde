@@ -4,7 +4,7 @@ public class player extends entity{
   public player(){
    x = 400;
    y = 300;
-   health = 10;
+   health = 100;
    bullets = new LinkedList();
    cooldown = 40;
    player = loadImage("knight.png");

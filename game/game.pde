@@ -1,5 +1,6 @@
 player pleb;
 int roomNum = 0;
+int currentRoom = 0;
 room[] rooms;
 map level;
 block[] room = new block[58];
@@ -42,7 +43,7 @@ void setup(){
 
 void draw(){
   background(255);
-  rooms[roomNum].update();
+  rooms[currentRoom].update();
   if(pleb.getHealth() <= 0){
     println("you lose");
     exit();
@@ -52,7 +53,18 @@ void draw(){
   }
   text(frameRate,10,10);
   if (rooms[roomNum].enemies.size() == 0){
-    //exit();
+    if(pleb.x < 50){
+      level.moveLeft();
+    }
+    if(pleb.x > 750){
+      level.moveRight();
+    }
+    if(pleb.y < 50){
+      level.moveUp();
+    }
+    if(pleb.y > 550){
+      level.moveDown();
+    }
   }
 }
 

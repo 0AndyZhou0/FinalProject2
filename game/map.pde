@@ -3,22 +3,25 @@ public class map{
   char[][] map = {{'#','#','#','R','#','R'},
                   {'#','R','R','R','R','R'},
                   {'#','R','#','R','#','R'},
-                  {'#','R','R','S','#','R'},
+                  {'#','R','R','C','#','R'},
                   {'#','R','R','#','R','R'},
                   {'#','#','#','#','#','R'}};
   public map(){
-    for(int r = 0;r < map[0].length;r++){
-      playerX = 4;
-      playerY = 4;
-    }
+    playerX = 3;
+    playerY = 3;
   }
   void moveUp(){
     if(playerY > 0 && map[playerY-1][playerX] != '#'){
-      map[playerY][playerX] = 'C';
+      map[playerY][playerX] = (char)roomNum;
       playerY--;
       if(map[playerY][playerX] == 'R'){
         rooms[++roomNum] = new room();
+        currentRoom = roomNum;
+      }else{
+        currentRoom = (int)map[playerY][playerX];
       }
+      pleb.x = 400;
+      pleb.y = 520;
     }
   }
   void moveDown(){
@@ -27,7 +30,12 @@ public class map{
       playerY++;
       if(map[playerY][playerX] == 'R'){
         rooms[++roomNum] = new room();
+        currentRoom = roomNum;
+      }else{
+        currentRoom = (int)map[playerY][playerX];
       }
+      pleb.x = 400;
+      pleb.y = 80;
     }
   }
   void moveLeft(){
@@ -36,8 +44,11 @@ public class map{
       playerX--;
       if(map[playerY][playerX] == 'R'){
         rooms[++roomNum] = new room();
+        currentRoom = roomNum;
+      }else{
+        currentRoom = (int)map[playerY][playerX];
       }
-      pleb.x = 750;
+      pleb.x = 720;
       pleb.y = 300;
     }
   }
@@ -47,7 +58,12 @@ public class map{
       playerX++;
       if(map[playerY][playerX] == 'R'){
         rooms[++roomNum] = new room();
+        currentRoom = roomNum;
+      }else{
+        currentRoom = (int)map[playerY][playerX];
       }
+      pleb.x = 80;
+      pleb.y = 300;
     }
   }
 }

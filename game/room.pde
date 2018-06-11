@@ -45,7 +45,7 @@ class room{
       doors.addLast(new block(true,0,300));
       doors.addLast(new block(true,0,350));
     }
-    if(level.playerY > 0 && level.map[level.playerY-1][level.playerX] != '#'){
+    if(level.playerX < level.map[0].length-1 && level.map[level.playerY][level.playerX+1] != '#'){
       numDoors++;
       doors.addFirst(new block(true,750,200));
       doors.addFirst(new block(true,750,250));
@@ -78,8 +78,14 @@ class room{
         }
       }
     }else{
-      if(pleb.x < 40){
-        level.moveLeft();
+      if(doors.size() == 16){
+        println(numDoors);
+        for(int i = 0;i < numDoors;i++){
+          doors.removeFirst();
+          doors.removeFirst();
+          doors.removeFirst();
+          doors.removeFirst();
+        }
       }
     }
   }
