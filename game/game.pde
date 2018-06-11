@@ -1,6 +1,5 @@
 player pleb;
-int bigX;
-int bigY;
+int bigX, bigY;
 int roomNum = 0;
 int currentRoom = 0;
 boolean map;
@@ -19,7 +18,15 @@ void setup(){
   bigY = 3;
   level = new map();
   pleb = new player();
-  rooms = new room[19];
+  int temp = 0;
+  for(int r = 0;r < level.map[0].length;r++){
+    for(int c = 0;c < level.map.length;c++){
+      if(level.map[r][c] != '#'){
+        temp++;
+      }
+    }
+  }
+  rooms = new room[temp];
   rooms[0] = new room();
   rooms[0].enemies = new LinkedList();
   for(int i = 0; i < 58;i++){
@@ -64,7 +71,7 @@ void draw(){
     pleb.update();
     pleb.display();
   }
-  if(roomNum == 18 && rooms[18].enemies.size() == 0){
+  if(roomNum == rooms.length - 1 && rooms[rooms.length - 1].enemies.size() == 0){
     println("you did it");
     exit();
   }

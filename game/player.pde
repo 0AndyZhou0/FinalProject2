@@ -9,7 +9,7 @@ public class player extends entity{
    cooldown = 40;
    player = loadImage("knight.png");
    mana = 150;
-   weapon = -1;
+   weapon = 0;
   }
   
   boolean up,left,down,right,special,shooting;
