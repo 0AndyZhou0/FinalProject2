@@ -42,16 +42,6 @@ void setup(){
 }
 
 void draw(){
-  println(roomNum);
-  print(" " + currentRoom);
-  //println(level.playerX);
-  //print(level.playerY);
-  //for(int r = 0;r < 6;r++){
-  //  for(int c = 0;c < 6;c++){
-  //    print(level.map[r][c]);
-  //  }
-  //  println();
-  //}
   background(255);
   for(block b:room){
     b.update();
