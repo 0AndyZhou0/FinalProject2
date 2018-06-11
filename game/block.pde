@@ -7,6 +7,10 @@ class block{
     y = yCoor;
   }
   
+  boolean isWall(){
+    return isWall;
+  }
+  
  void update(){
    fill(0);
    rect(x,y,50,50);

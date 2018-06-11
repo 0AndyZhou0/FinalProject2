@@ -22,8 +22,8 @@ public class player extends entity{
         bullets.remove(b);
         i--;
       }else{
-        for(int x = 0;x < rooms[0][0].enemies.size();x++){
-          enemy e = rooms[0][0].enemies.get(x);
+        for(int x = 0;x < rooms[roomNum].enemies.size();x++){
+          enemy e = rooms[roomNum].enemies.get(x);
           if(pow((float)b.getX()-(float)e.getX(),2) + pow((float)b.getY()-(float)e.getY(),2) < 400){
               hit(e,b);
           }

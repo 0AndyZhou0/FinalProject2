@@ -28,6 +28,11 @@ public abstract class entity{
           y-=amount;
         }
       }
+      for(block b:rooms[roomNum].doors){
+        if(abs(x-b.x-25) < 45 && abs(y-b.y-25) < 45){
+          y-=amount;
+        }
+      }
     }else{
       direction*=-1;
     }
@@ -36,6 +41,11 @@ public abstract class entity{
     if(x + amount > 0 && x + amount < width){
       x += amount;
       for(block b:room){
+        if(abs(x-b.x-25) < 45 && abs(y-b.y-25) < 45){
+          x-=amount;
+        }
+      }
+      for(block b:rooms[roomNum].doors){
         if(abs(x-b.x-25) < 45 && abs(y-b.y-25) < 45){
           x-=amount;
         }

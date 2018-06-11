@@ -1,6 +1,6 @@
 player pleb;
-int[][] wallCoor;
-room[][] rooms;
+int roomNum = 0;
+room[] rooms;
 map level;
 block[] room = new block[58];
 
@@ -8,8 +8,9 @@ void setup(){
   size(800,600);//16+16+11+11
   level = new map();
   pleb = new player();
-  rooms = new room[1][1];
-  rooms[0][0] = new room();
+  rooms = new room[17];
+  rooms[0] = new room();
+  //rooms[0].enemies = new LinkedList();
   for(int i = 0; i < 58;i++){
     if(i < 16){
       if (i != 6 && i != 7 && i != 8 && i != 9){
@@ -41,11 +42,7 @@ void setup(){
 
 void draw(){
   background(255);
-  for(int r = 0;r < rooms[0].length;r++){
-    for(int c = 0;c < rooms.length;c++){
-      rooms[r][c].update();
-    }
-  }
+  rooms[roomNum].update();
   if(pleb.getHealth() <= 0){
     println("you lose");
     exit();
@@ -54,7 +51,7 @@ void draw(){
     pleb.display();
   }
   text(frameRate,10,10);
-  if (rooms[0][0].getEnemies().size() == 0){
+  if (rooms[roomNum].enemies.size() == 0){
     //exit();
   }
 }
