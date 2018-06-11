@@ -9,7 +9,7 @@ void setup(){
   size(800,600);//16+16+11+11
   level = new map();
   pleb = new player();
-  rooms = new room[17];
+  rooms = new room[19];
   rooms[0] = new room();
   rooms[0].enemies = new LinkedList();
   for(int i = 0; i < 58;i++){

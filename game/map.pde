@@ -21,6 +21,7 @@ public class map{
       }
       pleb.x = 400;
       pleb.y = 520;
+      pleb.bullets = new LinkedList();
     }
   }
   void moveDown(){
@@ -34,6 +35,7 @@ public class map{
       }
       pleb.x = 400;
       pleb.y = 80;
+      pleb.bullets = new LinkedList();
     }
   }
   void moveLeft(){
@@ -47,6 +49,7 @@ public class map{
       }
       pleb.x = 720;
       pleb.y = 300;
+      pleb.bullets = new LinkedList();
     }
   }
   void moveRight(){
@@ -60,6 +63,7 @@ public class map{
       }
       pleb.x = 80;
       pleb.y = 300;
+      pleb.bullets = new LinkedList();
     }
   }
 }
