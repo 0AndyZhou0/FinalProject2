@@ -11,7 +11,7 @@ public class enemy extends entity{
    Color = enemyColor;
    cooldown = 40;
    direction = 3;
-   weapon = (int)random(2) + 1;
+   weapon = (int)random(2);
    if (weapon == 0){
      Eminem = loadImage("MiniPistolKnight.png");
    } else if (weapon == 1){
