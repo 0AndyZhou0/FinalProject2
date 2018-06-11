@@ -113,6 +113,19 @@ void keyPressed(){
   if(key == 's'){pleb.down = true;}
   if(key == 'd'){pleb.right = true;}
   if(key == ' '){pleb.special = true;}
+  if(key == 'q'){
+    if(pleb.weapon > 0){
+      pleb.weapon--;
+    }
+  }
+  if(key == 'e'){
+    if(pleb.weapon < 2){
+      pleb.weapon++;
+    }
+  }
+  if(key == 'g'){
+    pleb.weapon = -1;
+  }
 }
 
 void keyReleased(){
