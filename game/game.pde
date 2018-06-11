@@ -3,6 +3,7 @@ int bigX;
 int bigY;
 int roomNum = 0;
 int currentRoom = 0;
+boolean map;
 room[] rooms;
 map level;
 block[] room = new block[58];
@@ -87,18 +88,19 @@ void draw(){
     }
   }
   world[bigY][bigX] = 'V';
-  fill(100);
-  rect(690,490,100,100);
-  for (int i = 0; i < world.length; i++){
-    for (int j = 0; j < world[0].length; j++){
-      if (world[i][j] == 'R'){
-       fill(255);
-       rect(700 + j*15, 500 + i*15, 10, 10);
-      } else if (world[i][j] == 'V'){        
-       fill(0);
-       rect(700 + j*15, 500 + i*15, 10, 10);
-      } 
-      
+  if(map){
+    fill(100);
+    rect(690,490,100,100);
+    for (int i = 0; i < world.length; i++){
+      for (int j = 0; j < world[0].length; j++){
+        if (world[i][j] == 'R'){
+         fill(255);
+         rect(700 + j*15, 500 + i*15, 10, 10);
+        } else if (world[i][j] == 'V'){        
+         fill(0);
+         rect(700 + j*15, 500 + i*15, 10, 10);
+        }
+      }
     }
   }
 }
@@ -130,6 +132,7 @@ void keyPressed(){
   if(key == 'g'){
     pleb.weapon = -1;
   }
+  if(key == 'm'){map = true;}
 }
 
 void keyReleased(){
@@ -138,4 +141,5 @@ void keyReleased(){
   if(key == 's'){pleb.down = false;}
   if(key == 'd'){pleb.right = false;}
   if(key == ' '){pleb.special = false;}
+  if(key == 'm'){map = false;}
 }
