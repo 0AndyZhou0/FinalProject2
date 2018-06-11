@@ -1,4 +1,5 @@
 public class enemy extends entity{
+  PImage Eminem;
   double distance;
   float angle;
   
@@ -10,7 +11,14 @@ public class enemy extends entity{
    Color = enemyColor;
    cooldown = 40;
    direction = 3;
-   weapon = 2;//(int)random(2);
+   weapon = (int)random(2) + 1;
+   if (weapon == 0){
+     Eminem = loadImage("MiniPistolKnight.png");
+   } else if (weapon == 1){
+     Eminem = loadImage("MiniMinigunKnight.png");
+   } else if (weapon == 2){
+     Eminem = loadImage("BadKnightMini.png");
+   } 
   }
   
   color getColor(){
@@ -52,8 +60,7 @@ public class enemy extends entity{
   }
   
   public void display(){
-    fill(Color,0,0);
-    ellipse((int)x,(int)y,40,40);
+    image(Eminem,x-45,y-45,80,80);
   }
   
   public void move(){
