@@ -3,7 +3,7 @@ public class map{
   char[][] map = {{'#','#','#','R','#','R'},
                   {'#','R','R','R','R','R'},
                   {'#','R','#','R','#','R'},
-                  {'#','R','R','C','#','R'},
+                  {'#','R','R',(char)0,'#','R'},
                   {'#','R','R','#','R','R'},
                   {'#','#','#','#','#','R'}};
   public map(){
@@ -12,10 +12,9 @@ public class map{
   }
   void moveUp(){
     if(playerY > 0 && map[playerY-1][playerX] != '#'){
-      map[playerY][playerX] = (char)roomNum;
-      playerY--;
-      if(map[playerY][playerX] == 'R'){
+      if(map[--playerY][playerX] == 'R'){
         rooms[++roomNum] = new room();
+        map[playerY][playerX] = (char)roomNum;
         currentRoom = roomNum;
       }else{
         currentRoom = (int)map[playerY][playerX];
@@ -26,10 +25,9 @@ public class map{
   }
   void moveDown(){
     if(playerY < map.length-1 && map[playerY+1][playerX] != '#'){
-      map[playerY][playerX] = 'C';
-      playerY++;
-      if(map[playerY][playerX] == 'R'){
+      if(map[++playerY][playerX] == 'R'){
         rooms[++roomNum] = new room();
+        map[playerY][playerX] = (char)roomNum;
         currentRoom = roomNum;
       }else{
         currentRoom = (int)map[playerY][playerX];
@@ -40,10 +38,9 @@ public class map{
   }
   void moveLeft(){
     if(playerX > 0 && map[playerY][playerX-1] != '#'){
-      map[playerY][playerX] = 'C';
-      playerX--;
-      if(map[playerY][playerX] == 'R'){
+      if(map[playerY][--playerX] == 'R'){
         rooms[++roomNum] = new room();
+        map[playerY][playerX] = (char)roomNum;
         currentRoom = roomNum;
       }else{
         currentRoom = (int)map[playerY][playerX];
@@ -54,10 +51,9 @@ public class map{
   }
   void moveRight(){
     if(playerX < map[0].length-1 && map[playerY][playerX+1] != '#'){
-      map[playerY][playerX] = 'C';
-      playerX++;
-      if(map[playerY][playerX] == 'R'){
+      if(map[playerY][++playerX] == 'R'){
         rooms[++roomNum] = new room();
+        map[playerY][playerX] = (char)roomNum;
         currentRoom = roomNum;
       }else{
         currentRoom = (int)map[playerY][playerX];

@@ -60,9 +60,6 @@ class room{
   }
 
   void update(){
-    for(block b:room){
-      b.update();
-    }
     for(block b:doors){
       b.update();
     }
@@ -79,7 +76,6 @@ class room{
       }
     }else{
       if(doors.size() == 16){
-        println(numDoors);
         for(int i = 0;i < numDoors;i++){
           doors.removeFirst();
           doors.removeFirst();

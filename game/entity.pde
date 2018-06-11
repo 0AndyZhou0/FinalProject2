@@ -28,7 +28,7 @@ public abstract class entity{
           y-=amount;
         }
       }
-      for(block b:rooms[roomNum].doors){
+      for(block b:rooms[currentRoom].doors){
         if(abs(x-b.x-25) < 45 && abs(y-b.y-25) < 45){
           y-=amount;
         }
@@ -45,7 +45,7 @@ public abstract class entity{
           x-=amount;
         }
       }
-      for(block b:rooms[roomNum].doors){
+      for(block b:rooms[currentRoom].doors){
         if(abs(x-b.x-25) < 45 && abs(y-b.y-25) < 45){
           x-=amount;
         }

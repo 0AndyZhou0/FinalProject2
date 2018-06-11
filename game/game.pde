@@ -11,7 +11,7 @@ void setup(){
   pleb = new player();
   rooms = new room[17];
   rooms[0] = new room();
-  //rooms[0].enemies = new LinkedList();
+  rooms[0].enemies = new LinkedList();
   for(int i = 0; i < 58;i++){
     if(i < 16){
       if (i != 6 && i != 7 && i != 8 && i != 9){
@@ -42,7 +42,20 @@ void setup(){
 }
 
 void draw(){
+  println(roomNum);
+  print(" " + currentRoom);
+  //println(level.playerX);
+  //print(level.playerY);
+  //for(int r = 0;r < 6;r++){
+  //  for(int c = 0;c < 6;c++){
+  //    print(level.map[r][c]);
+  //  }
+  //  println();
+  //}
   background(255);
+  for(block b:room){
+    b.update();
+  }
   rooms[currentRoom].update();
   if(pleb.getHealth() <= 0){
     println("you lose");
