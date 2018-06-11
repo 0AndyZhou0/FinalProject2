@@ -63,6 +63,10 @@ void draw(){
     pleb.update();
     pleb.display();
   }
+  if(roomNum == 18 && rooms[18].enemies.size() == 0){
+    println("you did it");
+    exit();
+  }
   text(frameRate,10,10);
   if (rooms[roomNum].enemies.size() == 0){
     if(pleb.x < 50){
