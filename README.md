@@ -35,7 +35,6 @@ Working on Prototype
 
 Researching aspects of Prototype
 
-Developing plot
 
 Pending:
 
@@ -46,10 +45,13 @@ Coding of Prototype
 05/23/2018
 Completed:
 
-
+Testing of Repository with Processing
 
 In Progress:
 
+Working on Prototype
+
+Researching aspects of Prototype
 
 
 Pending:
@@ -60,7 +62,7 @@ Pending:
 
 Completed:
 
-
+Prototype
 
 In Progress:
 
