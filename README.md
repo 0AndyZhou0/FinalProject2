@@ -19,6 +19,8 @@ g = gun hack.
 
 Developement Log:
 
+
+
 05/22/2018
 
 Completed:
@@ -38,6 +40,8 @@ Developing plot
 Pending:
 
 Coding of Prototype
+
+
 
 05/23/2018
 Completed:
