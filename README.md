@@ -38,7 +38,7 @@ Researching aspects of Prototype
 
 Pending:
 
-Coding of Prototype
+Coding of Project
 
 
 
@@ -56,6 +56,8 @@ Researching aspects of Prototype
 
 Pending:
 
+Coding of Project
+
 
 
 05/24/2018
@@ -64,68 +66,90 @@ Completed:
 
 Prototype
 
+Basic Classes
+
+Testing of basic classes
+
 In Progress:
 
-
+Basic methods for classes
 
 Pending:
 
-Riddles Further coding of project
+Completion of basic methods for classes
 
+Completion of project
 
 05/29/2018
 
 Completed:
 
-
+None
 
 In Progress:
 
-
+Work on entity and player classes
 
 Pending:
 
+Implementation of bullet class
+
+Completion of project
 
 
 05/30/2018
 
 Completed:
 
+Creation of bullet class
 
+Addition of moving player and enemy
 
 In Progress:
 
-
+Work on entity and player classes
 
 Pending:
+
+Completion of project
+
 
 05/31/2018
 
 Completed:
 
+Additions to bullet
 
+Odd shooting function
 
 In Progress:
 
-
+Shooting methods
 
 Pending:
 
+Wall class
 
+Completion of project
 
 
 06/01/2018
 
 Completed:
 
+Additon of walls
 
+Correction of shooting angle
 
 In Progress:
 
-
+Development of walls
 
 Pending:
 
+Completion of walls
+
+Completion of project
 
 
 
@@ -133,77 +157,107 @@ Pending:
 
 Completed:
 
+Movement boundaries
 
+Assigned enemies colors
+
+Empowered enemies to move around and shoot
+
+Enemy's ability to damage player
+
+Modification of bullet class from ArrayList type to LinkedList type
 
 In Progress:
 
-
+Development of Walls/Obstacles
 
 Pending:
 
+Completion of walls/obstacles
+
+Completion of project
 
 
 06/04/2018
 
 Completed:
 
+Walls surrounding player
 
+Bullets
+
+Cooldown to limit player freedom
 
 In Progress:
 
-
+Enemy movement
 
 Pending:
 
+Completion of project
 
 
 06/06/2018
 
 Completed:
 
+Modification of player's hitbox, enemy movement, and level class
+
+Addition of Crosshairs
 
 
 In Progress:
 
-
+Modification of enemy movement
 
 Pending:
 
+Completion of project
 
 
 06/08/2018
 
 Completed:
 
-
+"Spacebar" special
 
 In Progress:
 
-
+Modification of enemy movement
 
 Pending:
 
+Completion of project
 
 
 06/09/2018
 
 Completed:
 
+Changed choppy motion into smooth movements
 
+Increased speed of bullets
 
 In Progress:
 
-
+Coding of blocks class
 
 Pending:
 
+Completion of project
 
 
 06/10/2018
 
 Completed:
 
+Walls, gaps, and doors
 
+Addition of weapon modes(e.g. Machine gun, shotgun), sprites for enemies
+
+Modified Randomized Enemies to work with sprites
+
+Correction of enemy profiles
 
 In Progress:
 
@@ -211,17 +265,21 @@ In Progress:
 
 Pending:
 
+Completion of project
 
 
 06/11/2018
 
 Completed:
 
+Brick Texture
 
+Addition of hide/show map function, change weapon function, and clearing all rooms.
 
 In Progress:
 
-
+README documentation
 
 Pending:
 
+None
